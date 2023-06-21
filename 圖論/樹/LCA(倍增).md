@@ -43,8 +43,13 @@ struct LCA {
     
 };
 ```
-
-取得x, y路徑上的資訊
+### 預處理資訊
+```cpp
+// 寫在dfs處理倍增迴圈裡
+ma[pos][i] = max(ma[pos][i-1], ma[p[pos][i-1]][i-1]); // 最大值
+sum[v][i] = sum[v][i-1] + sum[p[v][i-1]][i-1]; // 總和
+```
+### 取得x, y路徑上的資訊
 ```cpp
 int query(int x, int y) {
     int l = lca(x, y);
