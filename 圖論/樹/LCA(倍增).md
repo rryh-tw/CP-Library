@@ -43,3 +43,22 @@ struct LCA {
     
 };
 ```
+
+取得x, y路徑上的資訊
+```cpp
+int query(int x, int y) {
+    int l = lca(x, y);
+    int left = 0, right = 0;
+    for(int d = dep[x] - dep[l]; d; d -= d&(-d)) {
+        int jp = __builtin_ctzll(d);
+        left = left + sum[x][jp];
+        x = p[x][jp];
+    }
+    for(int d = dep[y] - dep[l]; d; d -= d&(-d)) {
+        int jp = __builtin_ctzll(d);
+        right = right + sum[y][jp];
+        y = p[y][jp];
+    }
+    return left + right;
+}
+ ```
