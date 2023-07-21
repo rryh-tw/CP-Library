@@ -1,0 +1,4 @@
+# 討厭的題目
+1. 很難釐出一個簡單的解法
+  - [Codeforces B. Binary Number(Div. 2)](https://codeforces.com/contest/92/problem/B) 
+    - 舉例不要跳步驟（ex: `10011`->`10100`->`101`，更好的舉例法為`10011`->`10020`->`10020`->`1002`->`1010`）
